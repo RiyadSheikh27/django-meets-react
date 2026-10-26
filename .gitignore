@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+
+# Django uploads and collected static files
+/django/media/
+/django/staticfiles/
+
+# Virtual environments
+/env/
+/venv/
+/django/env/
+
+# Node.js
+node_modules/
+/react/dist/
+/react/build/
+
+# Environment variables and local settings
+.env
+.env.*
+!.env.example
+
+# Editor and operating system files
+.DS_Store
+.vscode/
+.idea/
