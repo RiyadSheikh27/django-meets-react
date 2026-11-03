@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@theme {
+  /* ১. Tailwind-এর ডিফল্ট সব রং মুছে ফেলা:
+     এরপর bg-blue-600, text-gray-500 ইত্যাদি কাজ করবে না, শুধু নিচের নামগুলো করবে */
+  --color-*: initial;
+
+  /* ২. সবসময় লাগে এমন দুটি (ডিফল্ট মোছার ফলে এগুলোও গেছে, তাই আবার দিলাম) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* ৩. Brand: অ্যাপের প্রধান রং (বাটন, লিংক, ফোকাস রিং)।
+     বাস্তবে এই মানগুলো ডিজাইনারের কাছ থেকে আসে; ধাপ ৫০ (সবচেয়ে হালকা) থেকে ৯০০ (সবচেয়ে গাঢ়) */
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5; /* প্রধান বাটন: সাদা লেখার সাথে contrast ≈ ৬:১ */
+  --color-brand-700: #4338ca; /* hover */
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  /* ৪. Semantic: danger (মোছা, ত্রুটি) */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-600: #dc2626; /* সাদা লেখার সাথে contrast ≈ ৪.৮:১ */
+  --color-danger-700: #b91c1c; /* hover, আর হালকা পটভূমির ওপর লেখা */
+
+  /* ৫. Semantic: success (সফল, সম্পন্ন) */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-700: #15803d; /* সাদা লেখার সাথে contrast ≈ ৫:১ (৬০০ নয়, কারণ ওটা ≈ ৩.৩:১) */
+  --color-success-800: #166534; /* hover */
+
+  /* ৬. Neutral, ভূমিকা-ভিত্তিক নামে (dark mode-এ শুধু এই মানগুলো বদলাবে) */
+  --color-page: #f3f4f6; /* পুরো পেজের পটভূমি */
+  --color-surface: #ffffff; /* কার্ড, মোডাল, input-এর ভেতর */
+  --color-surface-muted: #f3f4f6; /* hover, হালকা পটভূমি */
+  --color-line: #e5e7eb; /* সাজসজ্জার বিভাজক রেখা */
+  --color-line-strong: #858b99; /* input-এর বর্ডার (≈ ৩.৪:১) */
+  --color-content: #111827; /* প্রধান লেখা */
+  --color-content-muted: #4b5563; /* গৌণ লেখা (পটভূমির ওপর ≈ ৬.৯:১) */
+
+  /* ৭. ফন্ট: system ফন্ট (কোনো ডাউনলোড নেই, তাই দ্রুত)।
+     বাংলা অক্ষরের জন্য Noto Sans Bengali-কে fallback রাখা হলো */
+  --font-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali",
+    sans-serif;
+}
+
+/* Base layer: পুরো পেজের ডিফল্ট চেহারা।
+   @apply এখানে যথাযথ ব্যবহার, কারণ <body> কোনো component নয় যে মুড়ে দেওয়া যাবে */
+@layer base {
+  body {
+    @apply bg-page text-content antialiased;
+  }
+}
