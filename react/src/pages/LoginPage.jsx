@@ -23,7 +23,7 @@ function LoginPage() {
 
   // সাময়িক পরীক্ষার ডেটা (আপনার Django ইউজারের সাথে মেলাতে বদলে নিন)
   const handleValidLogin = () => {
-    dispatch(loginThunk({ username: "rahim123", password: "secret123" }));
+    dispatch(loginThunk({ username: "admin", password: "admin" }));
   };
   const handleWrongLogin = () => {
     dispatch(loginThunk({ username: "rahim123", password: "wrong-password" }));

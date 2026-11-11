@@ -1,4 +1,4 @@
-import { ERROR_MESSAGES } from "@/constants/messages";
+import { ERROR_MESSAGES } from "@/constants/message";
 
 // ফেরত দেয়: { message: string, fieldErrors: { [field]: string }, status: number | null }
 export function parseApiError(error) {
