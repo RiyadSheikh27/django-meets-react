@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { authApi } from "@/api/authApi";
-import { ERROR_MESSAGES } from "@/constants/message";
+import { ERROR_MESSAGES } from "@/constants/messages";
 import { REQUEST_STATUS } from "@/constants/status";
 import { authStorage } from "@/utils/authStorage";
 import { parseApiError } from "@/utils/parseApiError";
